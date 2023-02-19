@@ -1,21 +1,28 @@
 /* 
 playerChoice starting value = null (must be string)
-*/
-let playerChoice = prompt("Type you choice of Rock, Paper, or Scissors.")
-console.log(playerChoice)
-/*
-
 Create a text prompt asking for playerChoice
 Make the player hoice all UpperCase()
 Assign that choice to playerChoice
-cpuChoice starting value = null
 */
-var words = ["ROCK", "PAPER", "SCISSORS"];
-var word = words[Math.floor(Math.random() * words.length)];
-console.log(word); 
+let playerChoice = prompt("Type you choice of Rock, Paper, or Scissors.")
+playerChoice = playerChoice.toUpperCase()
+console.log(playerChoice)
+
 /*
+Needs to create validation check that player chose 1 of the 3 options.This would be a for loop? 
+cpuChoice starting value = null
 Roll a random number, or pick a random value from a string of text?
-Make the computer choice upper case, assign to cpuChoice
+*/
+
+var words = ["ROCK", "PAPER", "SCISSORS"];
+var cpuChoice = words[Math.floor(Math.random() * words.length)];
+console.log(cpuChoice); 
+    if (playerChoice === cpuChoice)
+    {console.log("Player chose " +playerChoice+" and CPU chose "+cpuChoice+". Draw!");}
+    else {console.log("IDK")}
+
+
+/*
 Compare values
 Create variable for gameResult
 
