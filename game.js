@@ -12,19 +12,22 @@ function getComputerChoice(cpuChoice){
 }
 
 const playerSelection = prompt("Please choose Rock, Paper, or scissors.").toLowerCase();
-const computerSelection = (getComputerChoice)
+const computerSelection = getComputerChoice();
 
-// tests for above variable and functions comment out when finished
-console.log(computerSelection());
-console.log(playerSelection);
-//
-
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === computerSelection)
-  return ("It's a tie!")
-  else if
-  (playerSelection === "rock" & computerSelection ==="scissors");
-  return ("You win!")
+function playRound(playerSelection, computerSelection){
+  let result;
+  if (playerSelection === computerSelection) {
+    result = (`Tie game, you both chose ${playerSelection}.`);
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "rock")
+  ) {
+    result = (`You win! You chose ${playerSelection} and the computer chose ${computerSelection}.`);
+  } else {
+    result = (`You lose! You chose ${playerSelection} and the computer chose ${computerSelection}.`);
+  }
+  return result;
 }
- 
 console.log(playRound(playerSelection, computerSelection));
+console.log(`${playerSelection} was the player's choice. ${computerSelection} was the computers choice.`)
