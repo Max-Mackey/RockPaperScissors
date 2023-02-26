@@ -1,5 +1,5 @@
 // function that creates choice using math.random
-function getComputerChoice(cpuChoice){
+function getComputerChoice(){
   const cpuNum = Math.floor(Math.random() * 3);
   switch (cpuNum) {
     case 0:
@@ -30,4 +30,15 @@ function playRound(playerSelection, computerSelection){
   return result;
 }
 console.log(playRound(playerSelection, computerSelection));
-console.log(`${playerSelection} was the player's choice. ${computerSelection} was the computers choice.`)
+
+function game() {
+  let matchCount = 0;
+  let result;
+
+  for (let i = 0; matchCount < 5; i++) {
+    result = playRound(playerSelection, computerSelection);
+    console.log(result);
+    matchCount++;
+  }
+}
+game();
