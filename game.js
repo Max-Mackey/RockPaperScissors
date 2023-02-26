@@ -1,3 +1,4 @@
+// function that creates choice using math.random
 function getComputerChoice(cpuChoice){
   const cpuNum = Math.floor(Math.random() * 3);
   switch (cpuNum) {
@@ -9,9 +10,21 @@ function getComputerChoice(cpuChoice){
           return 'scissors';
   }
 }
-console.log(getComputerChoice())
 
 const playerSelection = prompt("Please choose Rock, Paper, or scissors.").toLowerCase();
-console.log(playerSelection)
+const computerSelection = (getComputerChoice)
 
-function RockPaperScissors(playerSelection, getComputerChoice)
+// tests for above variable and functions comment out when finished
+console.log(computerSelection());
+console.log(playerSelection);
+//
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection)
+  return ("It's a tie!")
+  else if
+  (playerSelection === "rock" & computerSelection ==="scissors");
+  return ("You win!")
+}
+ 
+console.log(playRound(playerSelection, computerSelection));
