@@ -1,0 +1,31 @@
+body {
+    background-color:#3471CB;
+}
+
+img {
+    min-height: 250px;
+    max-height: 250px;
+    max-width: 250px;
+    border: solid 10px transparent; 
+}
+img:hover {
+    border-color: white;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+div {
+    padding: 8px;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+.signName {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    padding: 0px;
+    margin: 0px;
+}

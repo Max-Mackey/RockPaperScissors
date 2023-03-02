@@ -1,4 +1,20 @@
 // function that creates choice using math.random
+const playerRock = document.querySelector('div.rock');
+playerRock.addEventListener('click', () => {
+  const playerChoice = "rock";
+  console.log(playerChoice);
+})
+const playerPaper = document.querySelector('div.paper');
+playerPaper.addEventListener('click', () => {
+  const playerChoice = "paper";
+  console.log(playerChoice);
+})
+const playerScissors = document.querySelector('div.scissors');
+playerScissors.addEventListener('click', () => {
+  const playerChoice = "scissors";
+  console.log(playerChoice);
+})
+
 function getComputerChoice() {
   const cpuNum = Math.floor(Math.random() * 3);
   switch (cpuNum) {
@@ -26,19 +42,3 @@ function playRound(playerSelection, computerSelection) {
   }
   return result;
 }
-
-function game() {
-  let matchCount = 0;
-
-  while (matchCount < 5) {
-    const playerSelection = prompt("Please choose Rock, Paper, or scissors.").toLowerCase();
-    const computerSelection = getComputerChoice();
-    
-    const result = playRound(playerSelection, computerSelection);
-    console.log(result);
-    
-    matchCount++;
-  }
-}
-
-game();
