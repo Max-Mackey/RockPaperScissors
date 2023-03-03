@@ -48,3 +48,7 @@ button {
 button:hover {
     border: solid 6px white;
 }
+.statement {
+    border: solid 3px white;
+    padding: 8px;
+}

@@ -1,3 +1,4 @@
+// function that uses math to generate a computer selection
 function getComputerSelection() {
   const cpuNum = Math.floor(Math.random() * 3);
   switch (cpuNum) {
@@ -12,12 +13,12 @@ function getComputerSelection() {
 
 let i = 0;
 let x = 0;
-
+// function that calls the player and computer choices then outputs results
 function playRound(playerSelection, computerSelection) {
   let result;
   if (playerSelection === computerSelection) {
     result = (`Tie game, you both chose ${playerSelection}.`);
-    alert(result);
+    document.querySelector('.statement').textContent = `${result}`;
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "scissors" && computerSelection === "paper") ||
@@ -25,31 +26,32 @@ function playRound(playerSelection, computerSelection) {
   ) {
     result = (`You win! You chose ${playerSelection} and the computer chose ${computerSelection}.`);
     i = i+1;
-    alert(result);
+    document.querySelector('.statement').textContent = `${result}`;
     document.querySelector('div.playerScore').textContent = `${i}`;
     
   } else {
     result = (`You lose! You chose ${playerSelection} and the computer chose ${computerSelection}.`);
     x = x+1;
-    alert(result);
+    document.querySelector('.statement').textContent = `${result}`;
     document.querySelector('div.computerScore').textContent = `${x}`;
   }
 
   //check if either player or computer has reached a score of 5
   if (i === 5 || x === 5) {
     let winner = i === 5 ? "Player" : "The Computer";
-    alert(`${winner} wins!`);
+
 
     i = 0;
     x = 0;
     document.querySelector('div.playerScore').textContent = '0';
     document.querySelector('div.computerScore').textContent = '0';
+    document.querySelector('.statement').textContent = `${winner} wins! Click to play again.`;
   }
 
 
   return result;
 }
-
+// Query selectors to listen for clicks on RPS images, and then assign that choice to PlayerSelection variable. Code then executes getComputerSelection and then plays the round with playRound
 const playerRock = document.querySelector('div.rock');
 playerRock.addEventListener('click', () => {
   const playerSelection = "rock";
@@ -71,7 +73,7 @@ playerScissors.addEventListener('click', () => {
   const result = playRound(playerSelection, computerSelection);
   console.log(result);
 })
-
+// button to reset scores manually 
 const myButton = document.querySelector('.reset');
 const myDiv = document.querySelector('.playerScore');
 const myDiv2 = document.querySelector('.computerScore');
