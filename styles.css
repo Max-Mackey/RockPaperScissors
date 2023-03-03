@@ -36,3 +36,15 @@ h1, h2 {
     font-size: 36px;
     color: white;
 }
+.resetButton {
+    display: flex;
+    justify-content: center;
+}
+button {
+    font-size: 24px;
+    background-color: #FFBEA8;
+    border: solid 6px black;
+}
+button:hover {
+    border: solid 6px white;
+}
